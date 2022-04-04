@@ -1,6 +1,6 @@
 ## to execute the web automation it is necesary:
 
-###For the web automation:
+### For the web automation:
 
 1 -  Install python (last version)
 
@@ -11,4 +11,6 @@
 4 -  In your code you must be the next line ```driver = webdriver.Chrome('C:\webdriver\chromedriver.exe')```
 
 
-###For the Api automation:
+### For the Api automation:
+
+execute  ```python -m pip install requests ```
