@@ -2,6 +2,10 @@ import time
 import unittest
 from cgitb import text
 
+#import sys
+#sys.path.insert(0, '/page-objects')
+import page_objects.home as home
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -9,14 +13,26 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 
 
+
+
+
 driver = webdriver.Chrome('C:\webdriver\chromedriver.exe')
 driver.get('http://automationpractice.com/index.php')
 driver.maximize_window()
 time.sleep(1)
-#driver.find_element_by_css_selector('.login').click()
-driver.find_element(by=By.CSS_SELECTOR, value='.login').click()
-#driver.find_element_by_css_selector('#email_create').send_keys("santiholguing@gmail.com")
-driver.find_element(by=By.CSS_SELECTOR, value='#email_create').send_keys('stdfddttss@gszsssbs.com')
+
+
+
+
+home_page = home.Home(driver).access_signin()
+#driver.find_element(by=By.CSS_SELECTOR, value='.login').click()
+
+
+
+
+
+driver.find_element(by=By.CSS_SELECTOR, value='#email_create').send_keys('stdfssxddttss@gszssvsbs.com')
+
 driver.find_element(by=By.CSS_SELECTOR, value='.icon-user').click()
 #driver.find_element_by_css_selector('').click()
 #driver.find_element_by_css_selector('#customer_firstname').send_keys("Santiago")
@@ -38,8 +54,9 @@ driver.find_element(by=By.CSS_SELECTOR, value='#postcode').send_keys('12345')
 driver.find_element(by=By.CSS_SELECTOR, value='#phone_mobile').send_keys('3001221221')
 driver.find_element(by=By.CSS_SELECTOR, value='#alias').send_keys('alias example')
 driver.find_element(by=By.CSS_SELECTOR, value='#submitAccount').click()
-print()
+driver.quit()
 #assert(driver.find_element(by=By.CSS_SELECTOR, value='.account>span')=="santiago Holguin Giraldo"),"Esta malo, ese no es el nombre correcto"
+
 
 
 class mis_test(unittest.TestCase):
